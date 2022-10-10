@@ -6,12 +6,11 @@ import java.util.Random;
 
 
     public static void main(String[] args) {
-
         int[] arr = generateRandomArray();
         System.out.println(Arrays.toString(arr));
-        int[] expenses = generateRandomArray();
+        int[] expenses = getExpenses(arr);
         System.out.println(Arrays.toString(expenses));
-        return 0;
+        averageExpense(arr);
     }
 
 
@@ -19,18 +18,18 @@ import java.util.Random;
 
         Random random = new Random();
 
-        int[] arr = arr();
+        int[] arr = new int[30];
 
         for (int i = 0; i < arr.length; i++) {
             arr[i] = random.nextInt(100000) + 100000;
         }
         return arr;
     }
-    public static int[] expenses() {
+    public static int[] getExpenses(int[] arr) {
         System.out.println("задание 1 ");
         int sum = 0;
 
-        int[] expenses = new expenses[0];
+        int[] expenses = arr;
         for (int expense : expenses) {
             sum += expense;
         }
@@ -38,32 +37,39 @@ import java.util.Random;
 
         System.out.println("задание 2 ");
         int max = Integer.MIN_VALUE;
-        int mix = Integer.MAX_VALUE;
-        int min = 0;
+        int min = Integer.MAX_VALUE;
+
         for (int expense : expenses) {
             if (expense > max) {
                 max = expense;
             }
-            min = 0;
             if (expense < min) {
                 min = expense;
             }
         }
-        System.out.println("максимальная сумма трат за день составила " + min);
-        System.out.println("минимальная сумма трат за день составила " + max);
-        return new int[0];
+        System.out.println("максимальная сумма трат за день составила " + max);
+        System.out.println("минимальная сумма трат за день составила " + min);
+        return expenses;
     }
 
-     System.out.println("задание 3 ");
-    double averageExpense = (double) i / expenses.length;
-      System.out.println("средняя сумма трат за месяц составила" + averageExpense + " рублей");
+     public static int averageExpense(int[] arr) {
+         System.out.println("задание 3 ");
 
+         int[] arrayOfPurchases = arr;
+         int sum = 0;
+         for (int i = 0; i < arrayOfPurchases.length; i++) {
+             sum = sum + arrayOfPurchases[i];
+         }
+         int averagePurchasesSum = sum / arrayOfPurchases.length;
+         System.out.println("средняя сумма трат за месяц составила " + averagePurchasesSum + " рублей");
+         return averagePurchasesSum;
+     }
 
-       System.out.println("задание 4 ");
-    char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-              for (int i = reverseFullName.length - 1; i >= 0; i--) {
-        System.out.println(reverseFullName[i]);
-    }
+//       System.out.println("задание 4 ");
+//    char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+//              for (int i = reverseFullName.length - 1; i >= 0; i--) {
+//        System.out.println(reverseFullName[i]);
+//    }
 
 
 }
