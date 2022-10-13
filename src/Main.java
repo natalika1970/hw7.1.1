@@ -61,15 +61,15 @@ import java.util.Random;
              sum = sum + arrayOfPurchases[i];
          }
          int averagePurchasesSum = sum / arrayOfPurchases.length;
-         System.out.println("средняя сумма трат за месяц составила " + averagePurchasesSum + " рублей");
+         System.out.println("средняя сумма трат за месяц составила " + (double) averagePurchasesSum + " рублей");
          return averagePurchasesSum;
      }
 
-//       System.out.println("задание 4 ");
-//    char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-//              for (int i = reverseFullName.length - 1; i >= 0; i--) {
-//        System.out.println(reverseFullName[i]);
-//    }
+     //      System.out.println("задание 4 ");
+  // char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+    //         for (int i = reverseFullName.length - 1; i >= 0; i--) {
+    //   System.out.println(reverseFullName[i]);
+  //  }
 
 
 }
