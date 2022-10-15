@@ -60,6 +60,7 @@ import java.util.Random;
          for (int i = 0; i < arrayOfPurchases.length; i++) {
              sum = sum + arrayOfPurchases[i];
          }
+
          int averagePurchasesSum = sum / arrayOfPurchases.length;
          System.out.println("средняя сумма трат за месяц составила " + (double) averagePurchasesSum + " рублей");
          return averagePurchasesSum;
