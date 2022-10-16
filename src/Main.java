@@ -1,4 +1,5 @@
 import java.io.OptionalDataException;
+import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -18,7 +19,7 @@ import java.util.Random;
 
         Random random = new Random();
 
-        int[] arr = new int[30];
+        int[] arr = new int[31];
 
         for (int i = 0; i < arr.length; i++) {
             arr[i] = random.nextInt(100000) + 100000;
@@ -52,7 +53,7 @@ import java.util.Random;
         return expenses;
     }
 
-     public static int averageExpense(int[] arr) {
+     public static String averageExpense(int[] arr) {
          System.out.println("задание 3 ");
 
          int[] arrayOfPurchases = arr;
@@ -61,9 +62,12 @@ import java.util.Random;
              sum = sum + arrayOfPurchases[i];
          }
 
-         int averagePurchasesSum = sum / arrayOfPurchases.length;
-         System.out.println("средняя сумма трат за месяц составила " + (double) averagePurchasesSum + " рублей");
-         return averagePurchasesSum;
+         double averagePurchasesSum = (double) sum / arrayOfPurchases.length;
+         DecimalFormat df = new DecimalFormat(".##");
+         String result = df.format(averagePurchasesSum);
+         System.out.println(df.format(averagePurchasesSum));
+         System.out.println("средняя сумма трат за месяц составила " + result + " рублей");
+         return result;
      }
 
      //      System.out.println("задание 4 ");
